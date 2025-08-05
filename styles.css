@@ -557,115 +557,112 @@ body {
 
 .cookie-popup-content {
     background: white;
-    border-radius: 16px;
-    max-width: 480px;
+    border-radius: 20px;
+    max-width: 520px;
     width: 90%;
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
     animation: slideIn 0.4s ease-out;
     pointer-events: auto; /* Enable interactions on popup content */
     border: 1px solid #e5e7eb;
     overflow: hidden;
+    text-align: center;
 }
 
 .cookie-header {
-    padding: 24px 24px 0 24px;
+    padding: 32px 32px 16px 32px;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 12px;
-    border-bottom: 1px solid #f3f4f6;
-    padding-bottom: 16px;
+    gap: 16px;
 }
 
 .cookie-icon {
-    font-size: 1.5rem;
-    background: #fef3c7;
-    width: 40px;
-    height: 40px;
-    border-radius: 8px;
+    font-size: 2.5rem;
+    background: transparent;
+    width: auto;
+    height: auto;
+    border-radius: 0;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .cookie-title {
-    font-size: 1.25rem;
-    font-weight: 600;
+    font-size: 2rem;
+    font-weight: 700;
     margin: 0;
     color: #111827;
 }
 
 .cookie-body {
-    padding: 20px 24px;
+    padding: 0 32px 24px 32px;
 }
 
 .cookie-text {
-    font-size: 0.95rem;
+    font-size: 1.1rem;
     line-height: 1.6;
     margin: 0;
     color: #6b7280;
+    text-align: center;
 }
 
 .cookie-footer {
-    padding: 0 24px 24px 24px;
+    padding: 0 32px 32px 32px;
     display: flex;
     flex-direction: column;
     gap: 16px;
+    align-items: center;
 }
 
 .cookie-buttons {
     display: flex;
-    gap: 12px;
-    justify-content: flex-end;
+    gap: 16px;
+    justify-content: center;
 }
 
 .cookie-btn {
-    padding: 10px 20px;
-    border-radius: 8px;
-    font-size: 0.9rem;
-    font-weight: 500;
+    padding: 16px 32px;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
     cursor: pointer;
     transition: all 0.2s ease;
-    border: 1px solid transparent;
-    min-width: 100px;
+    border: none;
+    min-width: 140px;
 }
 
 .accept-btn {
-    background: #059669;
+    background: #22c55e;
     color: white;
-    border-color: #059669;
 }
 
 .accept-btn:hover {
-    background: #047857;
-    border-color: #047857;
+    background: #16a34a;
     transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(5, 150, 105, 0.25);
+    box-shadow: 0 4px 12px rgba(34, 197, 94, 0.25);
 }
 
 .deny-btn {
-    background: white;
-    color: #6b7280;
-    border-color: #d1d5db;
+    background: #ef4444;
+    color: white;
 }
 
 .deny-btn:hover {
-    background: #f9fafb;
-    color: #374151;
-    border-color: #9ca3af;
+    background: #dc2626;
     transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.25);
 }
 
 .policy-link {
-    color: #4f46e5;
+    color: #3b82f6;
     text-decoration: none;
-    font-size: 0.85rem;
+    font-size: 1rem;
     font-weight: 500;
     transition: color 0.2s ease;
-    text-align: center;
 }
 
 .policy-link:hover {
-    color: #3730a3;
+    color: #1d4ed8;
     text-decoration: underline;
 }
 
@@ -694,29 +691,49 @@ body {
     .cookie-popup-content {
         margin: 20px;
         max-width: none;
+        text-align: center;
     }
 
     .cookie-header {
-        padding: 20px 20px 0 20px;
+        padding: 28px 24px 16px 24px;
+    }
+
+    .cookie-icon {
+        font-size: 2.2rem;
+    }
+
+    .cookie-title {
+        font-size: 1.75rem;
     }
 
     .cookie-body {
-        padding: 16px 20px;
+        padding: 0 24px 20px 24px;
+    }
+
+    .cookie-text {
+        font-size: 1rem;
     }
 
     .cookie-footer {
-        padding: 0 20px 20px 20px;
+        padding: 0 24px 28px 24px;
     }
 
     .cookie-buttons {
         flex-direction: column;
-        gap: 8px;
+        gap: 12px;
+        align-items: center;
     }
 
     .cookie-btn {
         width: 100%;
+        max-width: 280px;
         justify-content: center;
-        padding: 12px;
+        padding: 14px 24px;
+        font-size: 1rem;
+    }
+
+    .policy-link {
+        font-size: 0.95rem;
     }
 }
 .footer {

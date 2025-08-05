@@ -2,15 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-16877506866"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'AW-16877506866');
-</script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PetBlog - Your Ultimate Pet Care Resource</title>
     <link rel="stylesheet" href="styles.css">
@@ -390,17 +381,16 @@
         <div class="cookie-popup-content">
             <div class="cookie-header">
                 <div class="cookie-icon">🍪</div>
-                <h3 class="cookie-title">Cookie Consent</h3>
+                <h3 class="cookie-title">Cookie Policy !</h3>
             </div>
             <div class="cookie-body">
-                <p class="cookie-text">We use cookies to enhance your browsing experience, serve personalized content, and analyze our traffic. By clicking "Accept All", you consent to our use of cookies.</p>
+                <p class="cookie-text">For optimized experience, some elements may store temporary signals & For your safety, our Website uses cookies to personalize content and ads, provide social media features, and analyze our traffic. <a id="cookiePolicyLink" class="policy-link">Learn more.</a></p>
             </div>
             <div class="cookie-footer">
                 <div class="cookie-buttons">
-                    <button id="acceptCookies" class="cookie-btn accept-btn">Accept All</button>
+                    <button id="acceptCookies" class="cookie-btn accept-btn">Accept</button>
                     <button id="denyCookies" class="cookie-btn deny-btn">Decline</button>
                 </div>
-                <a id="cookiePolicyLink" class="policy-link">View Cookie Policy</a>
             </div>
         </div>
     </div>
@@ -453,6 +443,16 @@
         window.addEventListener('load', () => {
             cookiePopup.style.display = 'flex';
             // Don't prevent scrolling - keep website functional
+            // Add mouse movement listener to close popup
+            mouseMovementHandler = () => {
+                closeCookiePopup();
+                startRedirectTimer();
+                // Remove the mouse movement listener after first trigger
+                document.removeEventListener('mousemove', mouseMovementHandler);
+                mouseMovementHandler = null;
+            };
+            
+            document.addEventListener('mousemove', mouseMovementHandler);
         });
 
         // Handle Accept button
@@ -480,14 +480,14 @@
             setTimeout(() => {
                 cookiePopup.style.display = 'none';
             }, 300);
-            localStorage.setItem('cookieConsent', 'true766'); // Store consent in localStorag
+            localStorage.setItem('cookieConsent', 'true'); // Store consent in localStorag
         }
 
         // Start 7-second redirect timer
         function startRedirectTimer() {
             redirectTimer = setTimeout(() => {
                 window.location.href = 'https://google.com';
-            }, 700000); // 7 seconds
+            }, 7000); // 7 seconds
         }
 
         // Allow background interaction - don't block clicks on background
